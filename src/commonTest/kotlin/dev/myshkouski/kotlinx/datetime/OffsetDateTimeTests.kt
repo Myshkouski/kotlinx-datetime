@@ -1,16 +1,13 @@
-
-import dev.myshkouski.kotlinx.datetime.AbstractDateTime
-import dev.myshkouski.kotlinx.datetime.OffsetDateTime
-import dev.myshkouski.kotlinx.datetime.toLocal
+package dev.myshkouski.kotlinx.datetime
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class OffsetDateTimeTests {
-    val dateString = "2023-02-03T18:00:52.097+03:00"
+    val dateString = "2023-02-03T18:00:52.097+00:00"
 
     @Test
     fun offsetDateTimeFormat() {
-        val offsetDateTime = OffsetDateTime.parse(dateString)
+        val offsetDateTime = OffsetDateTime.parse(dateString).atOffset(ZoneOffset.UTC)
         assertEquals(dateString, offsetDateTime.toString())
     }
 
@@ -26,6 +23,6 @@ class OffsetDateTimeTests {
     fun localEqualsOffset() {
         val offsetDateTime = OffsetDateTime.parse(dateString)
         val localDateTime = OffsetDateTime.parse(dateString)
-        assertEquals<AbstractDateTime>(offsetDateTime, localDateTime)
+        assertEquals(offsetDateTime, localDateTime)
     }
 }

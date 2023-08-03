@@ -10,7 +10,8 @@ internal actual fun getOffsetDateTime(): OffsetDateTime {
 }
 
 internal actual fun parseToOffsetDateTime(value: String): OffsetDateTime {
-    return kotlin.js.Date(kotlin.js.Date.parse(value)).toOffsetDateTime()
+    val timestamp = kotlin.js.Date.parse(value)
+    return kotlin.js.Date(timestamp).toOffsetDateTime()
 }
 
 internal actual fun OffsetDateTime.atOffset(offset: IZoneOffset): OffsetDateTime {

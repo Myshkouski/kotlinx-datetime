@@ -22,7 +22,7 @@ internal actual fun LocalDateTime.atOffset(offset: IZoneOffset): OffsetDateTime 
     return date.toOffsetDateTime()
 }
 
-private fun LocalDateTime.toJsDate() = kotlin.js.Date(
+internal fun LocalDateTime.toJsDate() = kotlin.js.Date(
     year.toInt(),
     month.toInt(),
     dayOfMonth.toInt(),

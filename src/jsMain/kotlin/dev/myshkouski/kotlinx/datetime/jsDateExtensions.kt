@@ -17,13 +17,13 @@ internal fun kotlin.js.Date.toUtcTime() = Time(
 internal fun kotlin.js.Date.toLocalDate() = Date(
     getFullYear().toShort(),
     getMonth().toByte(),
-    getDay().toByte(),
+    getDate().toByte(),
 )
 
 internal fun kotlin.js.Date.toUtcDate() = Date(
     getUTCFullYear().toShort(),
     getUTCMonth().toByte(),
-    getUTCDay().toByte(),
+    getUTCDate().toByte(),
 )
 
 internal fun kotlin.js.Date.toLocalDateTime() = LocalDateTime(toLocalDate(), toLocalTime())

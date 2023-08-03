@@ -32,7 +32,7 @@ sealed class AbstractDateTime(
     private fun toIsoString(zoneOffset: IZoneOffset): String {
         val year = year.padStartWithZeroes(4)
         val month = (month + 1).padStartWithZeroes(2)
-        val dayOfMonth = (dayOfMonth + 1).padStartWithZeroes(2)
+        val dayOfMonth = dayOfMonth.padStartWithZeroes(2)
         val hour = hour.padStartWithZeroes(2)
         val minute = minute.padStartWithZeroes(2)
         val second = second.padStartWithZeroes(2)
